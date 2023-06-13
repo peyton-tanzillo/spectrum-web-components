@@ -230,7 +230,7 @@ glob(`${rootDir}/node_modules/${iconsPath}/**.svg`, (error, icons) => {
 
         import { Icon${ComponentName} } from '../src/elements/Icon${id}.js';
         import { defineElement } from '@spectrum-web-components/base/src/define-element.js';
-        
+
         if (!customElements.get('${iconElementName}')) {
             defineElement('${iconElementName}', Icon${ComponentName});
         }
