@@ -226,7 +226,9 @@ glob(`${rootDir}/node_modules/${iconsPath}/**.svg`, (error, icons) => {
         import { Icon${ComponentName} } from '../src/elements/Icon${id}.js';
         import { defineElement } from '@spectrum-web-components/base/src/define-element.js';
 
-        defineElement('${iconElementName}', Icon${ComponentName});
+        if (!customElements.get('${iconElementName}')) {
+            defineElement('${iconElementName}', Icon${ComponentName});
+        }
 
         declare global {
             interface HTMLElementTagNameMap {
